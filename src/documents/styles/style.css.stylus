@@ -1,0 +1,50 @@
+body
+  background gray
+  margin 0
+
+ul.nolist
+  margin 0
+  padding 0
+  list-style-type none
+
+ul.menu
+  & > li
+    display inline-block
+
+.dropdown
+  .dropdown-menu
+    display none
+  &.open
+    .dropdown-menu
+      display block
+
+nav
+  position fixed
+  background: white
+  height 3em
+  width 100%
+  .logo
+    font-size 2em
+    display inline
+  .gloss_title
+    font-size 1.5em
+    position absolute
+    left 30%
+    top 0
+  .menu 
+    position absolute
+    right 0
+    top 0
+
+.sidebar
+  position fixed
+  left 0
+  top 4em
+  width 29%
+
+.content
+  background white
+  position absolute
+  right 0
+  top 4em
+  width 70%

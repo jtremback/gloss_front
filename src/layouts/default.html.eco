@@ -1,0 +1,12 @@
+<html>
+	<head>
+		<title><%= @document.title %></title>
+		<%- @getBlock("meta").toHTML() %>
+		<%- @getBlock("styles").add(["/styles/style.css"]).toHTML() %>
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+	</head>
+	<body>
+		<%- @content %>
+		<%- @getBlock("scripts").add(["/vendor/jquery191.js", "/vendor/bootstrap.js" ]).toHTML() %>
+	</body>
+</html>

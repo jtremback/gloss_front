@@ -1,3 +1,8 @@
+content-pos()
+  right 0
+  left 20em
+  max-width 50em
+
 body
   background gray
   margin 0
@@ -8,43 +13,75 @@ ul.nolist
   list-style-type none
 
 ul.menu
+  margin 0
+  padding 0
+  list-style-type none
   & > li
     display inline-block
 
 .dropdown
+  position relative
+  cursor pointer
   .dropdown-menu
     display none
+    position absolute
+    background white
+    top 1em
+    left 0
+    margin 0
+    padding 0
+    list-style-type none
+    &.pull-right
+      left auto
+      right 0
+      & > li
+        float right
   &.open
     .dropdown-menu
       display block
 
 nav
-  position fixed
+  position absolute
   background: white
   height 3em
   width 100%
   .logo
     font-size 2em
     display inline
-  .gloss_title
-    font-size 1.5em
+
+  .content-mirror
     position absolute
-    left 30%
+    content-pos()
     top 0
-  .menu 
-    position absolute
-    right 0
-    top 0
+
+    .gloss_title
+      font-size 1.5em
+      position absoluteu
+      top 0
+    .menu 
+      position absolute
+      right 0
+      top 0
 
 .sidebar
-  position fixed
+  position absolute
   left 0
   top 4em
-  width 29%
+
+.contentainer
+  padding-top 10em
+  position absolute
+  top 0
+  bottom 0
+  left 0
+  right 0
+  overflow-y scroll
 
 .content
-  background white
   position absolute
-  right 0
-  top 4em
-  width 70%
+  background white
+  content-pos()
+
+// @media screen and (max-width: 520px)
+
+  

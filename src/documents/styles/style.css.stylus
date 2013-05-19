@@ -1,12 +1,46 @@
+*
+  box-sizing border-box
+
+content-left = 20em
+
+input-padding = .25em .5em
+
 content-pos()
   right 0
-  left 20em
-  margin-right 1em
-  max-width 50em
+  left content-left
+  max-width 30em
 
+maingray = #666
+
+//FONTS
+serif-font = serif
+sans-font = sans-serif
+
+//GLOBALS
 body
-  background gray
+  font-family sans-font
+  font-size 22px
+  background maingray
   margin 0
+
+.search
+  position relative
+  padding-right 2em
+  input
+    border-radius 1.5em
+  i 
+    position absolute
+    padding input-padding
+    padding-right 0 
+
+input
+  margin 0
+  border 1px solid #333
+  background white
+  font-family sans-font
+  font-size inherit
+  padding input-padding
+  width 100%
 
 ul.nolist
   margin 0
@@ -14,11 +48,13 @@ ul.nolist
   list-style-type none
 
 ul.menu
-  margin 0
   padding 0
   list-style-type none
   & > li
     display inline-block
+    margin-right 1em
+    &:last-child
+      margin-right 0
 
 .dropdown
   position relative
@@ -42,12 +78,13 @@ ul.menu
       display block
 
 nav
-  z-index 2
-  position absolute
-  background: white
+  background-image: -webkit-linear-gradient(top, maingray, #555);
   height 3em
   width 100%
+  position absolute
+  z-index 2
   .logo
+    margin-left .5em
     font-size 2em
     display inline
 
@@ -58,7 +95,7 @@ nav
 
     .gloss_title
       font-size 1.5em
-      position absoluteu
+      position absolute
       top 0
     .menu 
       position absolute
@@ -66,9 +103,18 @@ nav
       top 0
 
 .sidebar
+  z-index 2
   position absolute
   left 0
-  top 4em
+  top 0
+  bottom 0
+  width content-left
+  padding-left 1em
+  padding-right 1em
+  padding-top 4em
+  .menu 
+    text-align right
+    width 100%
 
 .contentainer
   margin-top 3em
@@ -80,13 +126,25 @@ nav
   overflow-y scroll
 
 .content
+  font-family serif-font
+  padding 1em
   position absolute
   background white
   content-pos()
 
 @media screen and (max-width: 767px)
-  .content
-    left 3em
+  .contentainer
+    background rgba(0, 0, 0, .5)
+    .content
+      left 3em
+    &.shown
+      background rgba(0, 0, 0, .0)
+      .content
+        left content-left
+        right -(content-left)
+  .modal-mask
+    display block !important
+
   nav
     .content-mirror
       left 3em

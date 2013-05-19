@@ -19,7 +19,10 @@ nav
               li Log Out
 
 .sidebar
-  input.search(placeholder = "Search definitions...")
+  //- .modal-mask
+  .search
+    input(placeholder = "Search definitions...")
+    i.icon-search
   ul.menu 
     li + Add Definition
     li.dropdown
@@ -32,13 +35,13 @@ nav
             li Inbound
             li Outbound
   ul.nolist.results
-    li Agrobacterium tumefaciens(AT, Rhizobium radiobacter)
+    li Agrobacterium tumefaciens
     li Biobased products
     li Biological boundaries
     li Biopharming
     li Biotechnology
     li Biotechnology-derived
-    li Bovine spongiform encephalopathy(BSE)
+    li Bovine spongiform encephalopathy
     li Bt corn
     li Cell
     li Chromosomes

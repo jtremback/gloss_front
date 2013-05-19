@@ -1,6 +1,7 @@
 content-pos()
   right 0
   left 20em
+  margin-right 1em
   max-width 50em
 
 body
@@ -41,6 +42,7 @@ ul.menu
       display block
 
 nav
+  z-index 2
   position absolute
   background: white
   height 3em
@@ -69,7 +71,7 @@ nav
   top 4em
 
 .contentainer
-  padding-top 10em
+  margin-top 3em
   position absolute
   top 0
   bottom 0
@@ -82,6 +84,13 @@ nav
   background white
   content-pos()
 
-// @media screen and (max-width: 520px)
+@media screen and (max-width: 767px)
+  .content
+    left 3em
+  nav
+    .content-mirror
+      left 3em
+    .logo
+      display none
 
   

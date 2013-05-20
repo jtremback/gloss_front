@@ -1,0 +1,47 @@
+*{box-sizing:border-box}
+body{font-family:sans-serif;font-size:18px;background:#333;color:#ccc;text-shadow:1px 1px 2px #000;margin:0}
+hr{height:1px;background:rgba(0,0,0,0.5);box-shadow:0 0 10px rgba(0,0,0,0.5);margin:0;border:0}
+.search{position:relative;padding-right:2em;}
+.search input{border-radius:1.5em}
+.search i{position:absolute;padding:.25em .5em;padding-right:0}
+.bookmarklet{color:#29db76;border:1px dashed #29db76;padding:.25em .5em;display:inline-block}
+h1,h2,h3{margin-top:1em;margin-bottom:.62em;font-weight:900}
+h1{font-size:2.12em}
+h2{font-size:1.62em}
+h3{font-size:1.31em}
+input{margin:0;border:1px solid #333;background:#eef;font-family:sans-serif;font-size:inherit;padding:.25em .5em;width:100%;box-shadow:inset 0 1px 2px rgba(0,0,0,0.5)}
+ul.results{margin:0;padding:0;list-style-type:none;}
+ul.results > li{cursor:pointer;margin:.81em 0;}
+ul.results > li:hover{color:#fff}
+ul.bar{margin:0;padding:0;list-style-type:none;}
+ul.bar > li{cursor:pointer;display:inline-block;margin-right:1em;}
+ul.bar > li:hover{color:#fff}
+ul.bar > li:last-child{margin-right:0}
+.dropdown{position:relative;cursor:pointer;}
+.dropdown ul.dropdown-menu{display:none;position:absolute;background:#333;top:1.62em;left:0;margin:0;padding:0;color:#ccc;background:#2b2b2b;box-shadow:0 0 10px rgba(0,0,0,0.5);border:1px solid rgba(0,0,0,0.5);list-style-type:none;padding:0 .62em;}
+.dropdown ul.dropdown-menu.pull-right{left:auto;right:0;}
+.dropdown ul.dropdown-menu.pull-right > li{float:right}
+.dropdown ul.dropdown-menu > li{cursor:pointer;margin:.32em 0;}
+.dropdown ul.dropdown-menu > li:hover{color:#fff}
+.dropdown.open .dropdown-menu{display:block}
+nav{border-bottom:1px solid rgba(0,0,0,0.5);background-image:-webkit-linear-gradient(top,#333,#2b2b2b);height:4rem;width:100%;position:absolute;z-index:2;line-height:1;}
+nav .logo{color:#29db76;font-family:"Merriweather";font-weight:900;position:absolute;left:.5em;bottom:.9rem;font-size:2.12em;display:inline;vertical-align:bottom}
+nav .expand{position:absolute;top:1.2rem;left:0;line-height:2rem;font-size:2rem;width:4rem;text-align:center;color:#29db76;display:none}
+nav .content-mirror{position:absolute;right:0;left:20rem;max-width:50rem;top:0;height:100%;}
+nav .content-mirror .gloss_title{font-size:1.31em;position:absolute;bottom:1rem;vertical-align:bottom}
+nav .content-mirror ul.bar{position:absolute;right:1rem;bottom:1rem;vertical-align:bottom}
+.sidebar{z-index:2;position:absolute;left:0;top:4rem;bottom:0;width:20rem;padding-left:1em;padding-right:1em;overflow-y:scroll;}
+.sidebar .search{margin:1em 0}
+.sidebar ul.bar{width:100%;margin:.81em 0}
+.contentainer{margin-top:4rem;position:absolute;top:0;bottom:0;left:0;right:0;overflow-y:scroll}
+.content{text-shadow:none;color:#333;font-family:"Merriweather",serif;font-size:1em;line-height:1.31;padding:1em;padding-top:1rem;position:absolute;background:#eef;box-shadow:-5px 0 70px rgba(0,0,0,0.5);right:0;left:20rem;max-width:50rem}
+.content *:first-child{margin-top:0}
+@media screen and (max-width: 767px){.sidebar{z-index:0}
+.contentainer{background:rgba(0,0,0,0.5);}
+.contentainer .content{left:4rem}
+.contentainer.shown{background:rgba(0,0,0,0);}
+.contentainer.shown .content{left:20rem;right:-20rem}
+nav .content-mirror{left:4rem}
+nav .logo{display:none}
+nav .expand{display:block}
+}

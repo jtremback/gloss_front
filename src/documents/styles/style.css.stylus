@@ -1,27 +1,40 @@
 *
   box-sizing border-box
 
-content-left = 20em
+content-left = 20rem
 
 input-padding = .25em .5em
 
 content-pos()
   right 0
   left content-left
-  max-width 30em
+  max-width 50rem
 
-maingray = #666
+//COLORS
+maingray = #333
+lightgray = #ccc
+offwhite = #eeeeff
+brand = #29db76
 
 //FONTS
-serif-font = serif
+serif-font = "Merriweather", serif
 sans-font = sans-serif
 
 //GLOBALS
 body
   font-family sans-font
-  font-size 22px
+  font-size 18px
   background maingray
+  color lightgray
+  text-shadow 1px 1px 2px black
   margin 0
+
+hr
+  height 1px
+  background rgba(0, 0, 0, .5)
+  box-shadow 0px 0px 10px rgba(0, 0, 0, .5)
+  margin 0
+  border 0
 
 .search
   position relative
@@ -33,91 +46,157 @@ body
     padding input-padding
     padding-right 0 
 
+.bookmarklet
+  color brand
+  border 1px dashed brand
+  padding input-padding
+  display inline-block
+
+h1, h2, h3
+  margin-top 1em
+  margin-bottom .62em
+  font-weight 900
+
+h1
+  font-size 2.12em
+
+h2
+  font-size 1.62em
+
+h3
+  font-size 1.31em
+
 input
   margin 0
   border 1px solid #333
-  background white
+  background offwhite
   font-family sans-font
   font-size inherit
   padding input-padding
   width 100%
+  box-shadow inset 0px 1px 2px rgba(0, 0, 0, .5)
 
-ul.nolist
+ul.results
   margin 0
   padding 0
   list-style-type none
+  & > li
+    cursor pointer
+    margin .81em 0
+    &:hover 
+      color white
 
-ul.menu
+ul.bar
+  margin 0
   padding 0
   list-style-type none
   & > li
+    cursor pointer
     display inline-block
     margin-right 1em
+    &:hover
+      color white
     &:last-child
       margin-right 0
 
 .dropdown
   position relative
   cursor pointer
-  .dropdown-menu
+  ul.dropdown-menu
     display none
     position absolute
-    background white
-    top 1em
+    background maingray
+    top 1.62em
     left 0
     margin 0
     padding 0
+    color lightgray
+    background darken(maingray, 15%)
+    box-shadow 0px 0px 10px rgba(0, 0, 0, .5)
+    border 1px solid rgba(0, 0, 0, .5)
     list-style-type none
+    padding 0 .62em
     &.pull-right
       left auto
       right 0
       & > li
         float right
+    & > li
+      cursor pointer
+      margin .32em 0
+      &:hover 
+        color white
+
   &.open
     .dropdown-menu
       display block
 
 nav
-  background-image: -webkit-linear-gradient(top, maingray, #555);
-  height 3em
+  border-bottom 1px solid rgba(0, 0, 0, .5)
+  background-image: -webkit-linear-gradient(top, maingray, darken(maingray, 15%))
+  height 4rem
   width 100%
   position absolute
   z-index 2
+  line-height 1
   .logo
-    margin-left .5em
-    font-size 2em
+    color brand
+    font-family "Merriweather"
+    font-weight 900
+    position absolute
+    left .5em
+    bottom .9rem
+    font-size 2.12em
     display inline
+    vertical-align bottom
+
+  .expand
+    position absolute
+    top 1.2rem
+    left 0
+    line-height 2rem 
+    font-size 2rem
+    width 4rem
+    text-align center
+    color brand
+    display none
+
 
   .content-mirror
     position absolute
     content-pos()
     top 0
+    height 100%
 
     .gloss_title
-      font-size 1.5em
+      font-size 1.31em
       position absolute
-      top 0
-    .menu 
+      bottom 1rem
+      vertical-align bottom
+    ul.bar
       position absolute
-      right 0
-      top 0
+      right 1rem
+      bottom 1rem
+      vertical-align bottom
 
 .sidebar
   z-index 2
   position absolute
   left 0
-  top 0
+  top 4rem
   bottom 0
   width content-left
   padding-left 1em
   padding-right 1em
-  padding-top 4em
-  .menu 
-    text-align right
+  overflow-y scroll
+  .search
+    margin 1em 0
+  ul.bar
     width 100%
+    margin .81em 0
 
 .contentainer
-  margin-top 3em
+  margin-top 4rem
   position absolute
   top 0
   bottom 0
@@ -126,29 +205,39 @@ nav
   overflow-y scroll
 
 .content
+  *:first-child
+    margin-top 0
+  text-shadow none
+  color maingray
   font-family serif-font
+  font-size 1em
+  line-height 1.31
   padding 1em
+  padding-top 1rem
   position absolute
-  background white
+  background offwhite
+  box-shadow -5px 0 70px rgba(0, 0, 0, .5)
   content-pos()
 
 @media screen and (max-width: 767px)
+  .sidebar
+    z-index 0
   .contentainer
     background rgba(0, 0, 0, .5)
     .content
-      left 3em
+      left 4rem
     &.shown
       background rgba(0, 0, 0, .0)
       .content
         left content-left
         right -(content-left)
-  .modal-mask
-    display block !important
 
   nav
     .content-mirror
-      left 3em
+      left 4rem
     .logo
       display none
+    .expand
+      display block
 
   

@@ -3,10 +3,10 @@
 		<title><%= @document.title %></title>
 		<%- @getBlock("meta").toHTML() %>
 		<%- @getBlock("styles").add(["/styles/style.css"]).toHTML() %>
-		<link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
 	</head>
 	<body>
 		<%- @content %>
-		<%- @getBlock("scripts").add(["/vendor/jquery191.js", "/vendor/bootstrap.js" ]).toHTML() %>
+		<%- @getBlock("scripts").add(["/vendor/jquery191.js", "/vendor/bootstrap.js", "/scripts/script.js" ]).toHTML() %>
 	</body>
 </html>

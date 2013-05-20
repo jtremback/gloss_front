@@ -5,15 +5,19 @@ isPage: true
 ---
 
 nav
+  i.icon-reorder.expand
   .logo Glossasaurus
   .content-mirror
     .gloss_title Biotech
-    ul.menu
-      li.back Glossary List
+    ul.bar
+      li.bookmarklet
+        i.icon-link
+        | &nbsp;Bookmarklet
       li.dropdown
           a.dropdown-toggle(role='button', data-toggle='dropdown', data-target='#')
               | Annie34
-              i.icon-caret-down
+              span &nbsp; 
+              i.icon-angle-down
             ul.dropdown-menu.pull-right(role='menu')
               li Settings
               li Log Out
@@ -23,18 +27,21 @@ nav
   .search
     input(placeholder = "Search definitions...")
     i.icon-search
-  ul.menu 
-    li + Add Definition
+  hr
+  ul.bar 
+    li + Add Definition 
     li.dropdown
         a.dropdown-toggle(role='button', data-toggle='dropdown', data-target='#')
             | Sort
-            i.icon-caret-down
+            span &nbsp; 
+            i.icon-angle-down
           ul.dropdown-menu(role='menu')
             li Alphabetical
             li Relevance
             li Inbound
             li Outbound
-  ul.nolist.results
+  hr
+  ul.results
     li Agrobacterium tumefaciens
     li Biobased products
     li Biological boundaries
@@ -47,11 +54,18 @@ nav
     li Chromosomes
     li Control elements
     li Creutzfeldt-Jakob Disease
+    li Biotechnology-derived
+    li Bovine spongiform encephalopathy
+    li Bt corn
+    li Cell
+    li Chromosomes
+    li Control elements
+    li Creutzfeldt-Jakob Disease
 
 .contentainer
   .content
     h1 Bt corn
-    h3 Summary:
+    h2 Summary:
     | A corn plant that has been developed though biotechnology so that the plant tissues express a protein derived from a bacterium, Bacillus thuringiensis, which is toxic to some insects but non-toxic to humans and other mammals.
     h3 More information:
     | Bt corn is a variant of maize, genetically altered to express the bacterial Bt toxin, which is poisonous to insect pests. In the case of corn, the pest is the European corn borer. Over the past couple years they have added traits against Corn ear worm, and Root worm.Expressing the toxin was achieved by inserting a gene from the microorganism Bacillus thuringiensis into the corn genome. This gene codes for a toxin that causes the formation of pores in the Lepidoptera larval digestive tract. These pores allow naturally occurring enteric bacteria, such as E. coli and Enterobacter, to enter the hemocoel, where they multiply and cause sepsis. This is contrary to the common misconception that Bt toxin kills the larvae by starvation.In 2004, Bt176 varieties were voluntarily withdrawn from the list of approved varieties by the United States Environmental Protection Agency (EPA) when it was found to have little or no Bt expression in the ears and was not found to be effective against second generation corn borers.
